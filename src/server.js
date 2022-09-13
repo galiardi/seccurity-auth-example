@@ -1,6 +1,8 @@
 const { createServer } = require("https");
 const fs = require("fs");
 
+require("dotenv").config();
+
 const app = require("./app");
 
 const server = createServer(
