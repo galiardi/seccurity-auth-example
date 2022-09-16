@@ -1,11 +1,11 @@
-const { createServer } = require("https");
+const https = require("https");
 const fs = require("fs");
 
 require("dotenv").config();
 
 const app = require("./app");
 
-const server = createServer(
+const server = https.createServer(
   {
     key: fs.readFileSync("key.pem"),
     cert: fs.readFileSync("cert.pem"),
