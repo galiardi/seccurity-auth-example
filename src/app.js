@@ -1,4 +1,5 @@
 const path = require("path");
+const morgan = require("morgan");
 const helmet = require("helmet");
 const express = require("express");
 const cookieSession = require("cookie-session");
@@ -11,6 +12,8 @@ const checkLoggedIn = require("./functions/checkLoggedIn");
 const app = express();
 
 app.use(helmet());
+
+app.use(morgan("dev"));
 
 app.use(
   cookieSession({
